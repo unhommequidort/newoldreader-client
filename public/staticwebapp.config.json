@@ -2,11 +2,21 @@
   "routes": [
     {
       "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     }
   ],
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "responseOverrides": {
+    "404": {
+        "rewrite": "/index.html",
+        "statusCode": 200
+    }
+},
   "mimeTypes": {
-    ".json": "application/json"
+    ".json": "text/json",
+    ".js": "text/javascript",
+    ".css": "text/css"
   }
 }

@@ -2,6 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
+// Replace empty string with Azure url
+const API_ROOT =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://newoldreader-server.azurewebsites.net";
+
 function Register() {
   const navigate = useNavigate();
 
@@ -11,7 +17,7 @@ function Register() {
   async function registerUser(event) {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/register", {
+    const response = await fetch(`${API_ROOT}/api/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

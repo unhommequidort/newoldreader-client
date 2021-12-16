@@ -3,6 +3,12 @@ import rssImg from "./rss.png";
 import dayjs from "dayjs";
 import "./Feed.css";
 
+// Replace empty string with Azure url
+const API_ROOT =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://newoldreader-server.azurewebsites.net";
+
 const Feed = ({ selectedUrl, orderBy, sortOrder }) => {
   const [articles, setArticles] = useState({});
 
@@ -10,7 +16,7 @@ const Feed = ({ selectedUrl, orderBy, sortOrder }) => {
     if (selectedUrl) {
       setArticles({});
       const fetchArticles = async () => {
-        const response = await fetch("http://localhost:5000/api/rssfeed", {
+        const response = await fetch(`${API_ROOT}/api/rssfeed`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

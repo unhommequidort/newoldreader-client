@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
+// Replace empty string with Azure url
+const API_ROOT =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://newoldreader-server.azurewebsites.net";
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +15,7 @@ function Login() {
   async function logInUser(event) {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/login", {
+    const response = await fetch(`${API_ROOT}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

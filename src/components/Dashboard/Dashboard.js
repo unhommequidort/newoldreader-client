@@ -18,6 +18,12 @@ function isURL(str) {
   return !!pattern.test(str);
 }
 
+// Replace empty string with Azure url
+const API_ROOT =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://newoldreader-server.azurewebsites.net";
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const [feed, setFeed] = useState([]);
@@ -29,7 +35,7 @@ const Dashboard = () => {
 
   async function populateFeed() {
     setSelectedUrl("");
-    const req = await fetch("http://localhost:5000/api/feed", {
+    const req = await fetch(`${API_ROOT}/api/feed`, {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
@@ -45,7 +51,7 @@ const Dashboard = () => {
   }
 
   async function deleteFeedItem() {
-    const req = await fetch("http://localhost:5000/api/deleteitem", {
+    const req = await fetch(`${API_ROOT}/api/deleteitem`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +108,7 @@ const Dashboard = () => {
       return alert("You're already subscribed to that feed");
     }
 
-    const req = await fetch("http://localhost:5000/api/item", {
+    const req = await fetch(`${API_ROOT}/api/item`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -126,7 +132,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <a onClick={logOut} class="logout-button">
+      <a onClick={logOut} className="logout-button">
         Log Out &rarr;
       </a>
       <form onSubmit={updateFeed} className="feed-form">

@@ -6,7 +6,8 @@
     }
   ],
   "navigationFallback": {
-    "rewrite": "/index.html"
+    "rewrite": "/index.html",
+    "exclude": ["/static/media/*.{png,jpg,gif,svg}", "/static/css/*"]
   },
   "responseOverrides": {
     "404": {
@@ -16,7 +17,7 @@
 },
   "mimeTypes": {
     ".json": "text/json",
-    ".js": "text/javascript",
+    ".js": "application/javascript",
     ".css": "text/css"
   }
 }

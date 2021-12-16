@@ -15,6 +15,10 @@ function Login() {
   async function logInUser(event) {
     event.preventDefault();
 
+    if (!username || !password) {
+      return alert("Please provide a username and a password");
+    }
+
     const response = await fetch(`${API_ROOT}/api/login`, {
       method: "POST",
       headers: {

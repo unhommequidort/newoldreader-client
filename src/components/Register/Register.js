@@ -17,6 +17,10 @@ function Register() {
   async function registerUser(event) {
     event.preventDefault();
 
+    if (!username || !password) {
+      return alert("Please provide a username and a password");
+    }
+
     const response = await fetch(`${API_ROOT}/api/register`, {
       method: "POST",
       headers: {

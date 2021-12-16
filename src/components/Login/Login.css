@@ -1,0 +1,16 @@
+.login-form {
+  margin-bottom: 2rem;
+}
+
+.login-form input + input {
+  margin-left: 0.5rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 0.25rem;
+}
+
+.login-form input[type="submit"] {
+  padding: 0.25rem;
+}

@@ -1,0 +1,36 @@
+.feed {
+  padding: 0;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.feed li {
+  overflow: auto;
+}
+
+.feed li + li {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #ccc;
+}
+
+.feed__title {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.feed a {
+  color: #2086c6;
+}
+
+.feed__date {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #999;
+}
+
+.feed__thumbnail {
+  float: left;
+  margin: 0.75rem 0.75rem 0.25rem 0;
+}

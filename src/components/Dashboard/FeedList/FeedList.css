@@ -1,0 +1,18 @@
+.feedlist {
+  padding: 0;
+  margin-top: 0;
+  list-style: none;
+}
+
+.feedlist__item {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.feedlist__item.active {
+  font-weight: bold;
+}
+
+.feedlist__item + .feedlist__item {
+  margin-top: 0.5rem;
+}

@@ -6,6 +6,7 @@ import Register from "./components/Register/Register";
 import "./App.css";
 
 const App = () => {
+  console.log(process.env.NODE_ENV);
   return (
     <div className="site-container">
       <Routes>

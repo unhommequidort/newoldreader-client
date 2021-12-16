@@ -3,14 +3,48 @@
 }
 
 .login-form input + input {
-  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 47rem) {
+  .login-form input + input {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
+  width: 100%;
   padding: 0.25rem;
 }
 
+@media screen and (min-width: 47rem) {
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: auto;
+  }
+}
+
 .login-form input[type="submit"] {
-  padding: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0;
+  background-color: #2086c6;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #175f8c;
+}
+
+@media screen and (min-width: 47rem) {
+  .login-form input[type="submit"] {
+    padding: 0.375rem 0.75rem;
+  }
 }

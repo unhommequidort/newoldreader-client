@@ -184,7 +184,9 @@ const Dashboard = () => {
                   <option value="asc">Asc</option>
                 </select>
               </form>
-              <button onClick={deleteFeedItem}>Delete Feed</button>
+              <button onClick={deleteFeedItem} className="delete-button">
+                Delete Feed
+              </button>
             </div>
           ) : null}
 

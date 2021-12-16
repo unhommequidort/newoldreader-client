@@ -6,6 +6,11 @@
   margin-top: 2rem;
 }
 
+.cols__col:first-child {
+  padding: 0.5rem;
+  background-color: #eee;
+}
+
 @media screen and (min-width: 47rem) {
   .cols {
     display: flex;
@@ -17,7 +22,6 @@
     width: 13rem;
     padding: 0.75rem 1rem;
     margin-right: 2rem;
-    background-color: #eee;
   }
 
   .cols__col + .cols__col {
@@ -34,18 +38,28 @@
 }
 
 .feed-form input + input {
-  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 47rem) {
+  .feed-form input + input {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
 }
 
 .feed-form input[type="text"] {
   padding: 0.25rem;
+  width: 100%;
 }
 
-.feed-form input[type="submit"] {
-  padding: 0.25rem;
+@media screen and (min-width: 47rem) {
+  .feed-form input[type="text"] {
+    width: auto;
+  }
 }
 
-.feed-controls button {
+.delete-button {
   margin-top: 0.5rem;
   margin-left: auto;
 }
@@ -55,7 +69,7 @@
     display: flex;
   }
 
-  .feed-controls button {
+  .delete-button {
     margin-top: 0;
   }
 }
@@ -66,4 +80,36 @@
   right: 1.5rem;
   text-decoration: underline;
   cursor: pointer;
+}
+
+input[type="submit"],
+.delete-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0;
+  background-color: #2086c6;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+input[type="submit"]:hover {
+  background-color: #175f8c;
+}
+
+@media screen and (min-width: 47rem) {
+  input[type="submit"] {
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+.delete-button {
+  background-color: #de781f;
+}
+
+.delete-button:hover {
+  background-color: #de5c1f;
 }

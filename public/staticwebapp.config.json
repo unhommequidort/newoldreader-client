@@ -16,8 +16,6 @@
     }
 },
   "mimeTypes": {
-    ".json": "text/json",
-    ".js": "application/javascript",
-    ".css": "text/css"
+    ".json": "text/json"
   }
 }

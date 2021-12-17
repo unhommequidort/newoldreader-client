@@ -131,7 +131,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>The New Old Reader</h1>
       <a onClick={logOut} className="logout-button">
         Log Out &rarr;
       </a>

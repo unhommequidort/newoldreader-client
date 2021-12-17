@@ -21,7 +21,7 @@ const FeedList = ({ feedList, selectedUrl, setSelectedUrl }) => {
           ))}
         </ul>
       ) : (
-        <p>There are no articles to display</p>
+        <p>Add a feed above</p>
       )}
     </div>
   );

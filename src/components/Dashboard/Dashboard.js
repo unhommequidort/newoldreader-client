@@ -18,7 +18,6 @@ function isURL(str) {
   return !!pattern.test(str);
 }
 
-// Replace empty string with Azure url
 const API_ROOT =
   process.env.NODE_ENV === "development"
     ? "http://localhost:5000"
